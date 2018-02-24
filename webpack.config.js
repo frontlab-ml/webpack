@@ -5,7 +5,7 @@ const ExtractTextPlugin  = require("extract-text-webpack-plugin");
 const CleanWebpackPlugin = require("clean-webpack-plugin");
 
 module.exports = {
-  entry: "./src/app.js",
+  entry: "./src/index.js",
 
   // Source Map in any files
   devtool: 'inline-source-map',
