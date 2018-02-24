@@ -9,11 +9,15 @@ import ReactDOM from 'react-dom';
 import "./style.scss";
 
 
-function formatDate(date) {
+function formatDate(date: Date) {
   return date.toLocaleDateString();
 }
 
-function Avatar(props) {
+type AvatarProps = {|
+  author: AuthorType,
+|};
+
+function Avatar(props: AvatarProps) {
   return (
     <img
       className="Avatar"
@@ -23,7 +27,11 @@ function Avatar(props) {
   );
 }
 
-function UserInfo(props) {
+type UserInfoProps = {|
+  user: AuthorType,
+|};
+
+function UserInfo(props: UserInfoProps) {
   return (
     <div className="UserInfo">
       <Avatar author={props.author} />
@@ -32,7 +40,18 @@ function UserInfo(props) {
   );
 }
 
-function Comment(props) {
+type AuthorType = {|
+  name: string,
+  avatarUrl: string,
+|};
+
+type CommentType = {|
+  date: Date,
+  text: string,
+  author: AuthorType,
+|};
+
+function Comment(props: CommentType) {
   return (
     <div className="Comment">
       <UserInfo user={props.author} />
