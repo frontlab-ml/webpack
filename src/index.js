@@ -1,8 +1,11 @@
+//@flow
+
 import React from 'react';
 import ReactDOM from 'react-dom';
 
 // import App from "./components/Header";
 
+//$FlowFixMe
 import "./style.scss";
 
 
@@ -49,11 +52,16 @@ const comment = {
     avatarUrl: 'http://placekitten.com/g/64/64',
   },
 };
-ReactDOM.render(
-  <Comment
-    date={comment.date}
-    text={comment.text}
-    author={comment.author}
-  />,
-  document.getElementById('root')
-);
+
+const root = document.getElementById('root');
+
+if (root) {
+  ReactDOM.render(
+    <Comment
+      date={comment.date}
+      text={comment.text}
+      author={comment.author}
+    />,
+    root    
+  );
+}
