@@ -28,7 +28,7 @@ function Avatar(props: AvatarProps) {
 }
 
 type UserInfoProps = {|
-  user: AuthorType,
+  author: AuthorType,
 |};
 
 function UserInfo(props: UserInfoProps) {
@@ -54,7 +54,7 @@ type CommentType = {|
 function Comment(props: CommentType) {
   return (
     <div className="Comment">
-      <UserInfo user={props.author} />
+      <UserInfo author={props.author} />
       <div className="Comment-text">{props.text}</div>
       <div className="Comment-date">
         {formatDate(props.date)}
